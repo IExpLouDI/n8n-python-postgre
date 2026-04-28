@@ -27,11 +27,11 @@ services:
 
       # === ПОДКЛЮЧЕНИЕ К POSTGRESQL (ДОБАВИТЬ!!!) ===
       - DB_TYPE=postgresdb
-      - DB_POSTGRESDB_HOST=postgres  # Имя сервиса из этого же файла
+      - DB_POSTGRESDB_HOST=postgres
       - DB_POSTGRESDB_PORT=5432
       - DB_POSTGRESDB_DATABASE=n8n
       - DB_POSTGRESDB_USER=n8n
-      - DB_POSTGRESDB_PASSWORD=n8n  # Тот же пароль, что выше
+      - DB_POSTGRESDB_PASSWORD=n8n
 
       # === НАСТРОЙКИ RUNNERS ===
       - N8N_RUNNERS_ENABLED=true
@@ -46,7 +46,7 @@ services:
     restart: unless-stopped
     depends_on:
       postgres:
-        condition: service_healthy  # Ждём, пока PostgreSQL запустится
+        condition: service_healthy
     links:
       - postgres
 
