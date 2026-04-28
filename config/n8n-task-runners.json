@@ -1,0 +1,21 @@
+{
+  "task-runners": [
+    {
+      "runner-type": "javascript",
+      "workdir": "/home/runner",
+      "command": "/opt/runners/task-runner-js/start.sh",
+      "health-check-server-port": "5681"
+    },
+    {
+      "runner-type": "python",
+      "workdir": "/home/runner",
+      "command": "/opt/runners/task-runner-python/.venv/bin/python",
+      "args": ["-m", "src.main"],
+      "health-check-server-port": "5682",
+      "allowed-env": ["PATH", "N8N_RUNNERS_EXTERNAL_ALLOW", "N8N_RUNNERS_STDLIB_ALLOW"],
+      "env-overrides": {
+        "PYTHONPATH": "/opt/runners/task-runner-python"
+      }
+    }
+  ]
+}
