@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     environment:
       - POSTGRES_USER=n8n
-      - POSTGRES_PASSWORD=n8n  # В продакшене смените на надёжный пароль!
+      - POSTGRES_PASSWORD=n8n
       - POSTGRES_DB=n8n
     volumes:
       - postgres_data:/var/lib/postgresql/data
